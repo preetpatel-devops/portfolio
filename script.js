@@ -11,7 +11,7 @@
      Footer year
      --------------------------------------------------------------------- */
   var yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  if (yearEl) yearEl.textContent = "2023";
 
   /* ---------------------------------------------------------------------
      Mobile navigation toggle

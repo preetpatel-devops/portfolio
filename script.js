@@ -26,7 +26,6 @@
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close mobile menu after a link is tapped
     navLinks.querySelectorAll("[data-nav]").forEach(function (link) {
       link.addEventListener("click", function () {
         navLinks.classList.remove("open");
@@ -370,7 +369,6 @@
 
       generatedOtp = Math.floor(1000 + Math.random() * 9000).toString();
       
-      // Calculate 5-minute expiry string for template {{time}} variable
       const now = new Date();
       now.setMinutes(now.getMinutes() + 5);
       const expiryTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -379,7 +377,6 @@
       sendOtpBtn.disabled = true;
 
       try {
-        // Send email via EmailJS with direct Public Key parameter
         await emailjs.send("service_oqr3brg", "template_e9tbqp7", {
           to_email: emailVal,
           otp_code: generatedOtp,
@@ -396,7 +393,6 @@
       } catch (err) {
         console.error("EmailJS Error:", err);
         
-        // Fallback simulation mode if blocked by browser/CORS/domain restrictions (e.g. file:// protocol)
         alert("[Development Fallback Mode] Your OTP Code is: " + generatedOtp);
         otpStatus.textContent = "OTP generated (Check alert for test code)";
         otpStatus.className = "form-msg success";

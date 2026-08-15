@@ -13,9 +13,6 @@
 <!-- EmailJS Browser SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<!-- hCaptcha API Script -->
-<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,8 +25,8 @@
 <header class="resume-header" id="top">
   <div class="resume-header-inner">
     <div class="avatar-wrap">
-  <img src="https://lh3.googleusercontent.com/d/1K11dzmRpHCHHu_RrxaYSGRYlDRpA37xv" alt="Portrait of Preet Patel" class="avatar">
-  </div>
+      <img src="https://lh3.googleusercontent.com/d/1K11dzmRpHCHHu_RrxaYSGRYlDRpA37xv" alt="Portrait of Preet Patel" class="avatar">
+    </div>
     <h1 class="resume-name">Preet Patel</h1>
     <p class="resume-tagline">Cloud &amp; AI Engineer</p>
     <p class="resume-contact-line">
@@ -78,7 +75,7 @@
       <div class="timeline-list" id="experience-list">
         <div class="placeholder-card">
           <p>Your experience will appear here.</p>
-          <span>Add role, company, dates and impact bullets — see README 1, Section 3.</span>
+          <span>Add role, company, dates and impact bullets.</span>
         </div>
       </div>
     </div>
@@ -170,10 +167,9 @@
         </button>
         <div class="accordion-panel" id="other-certs-panel" role="region" aria-labelledby="other-certs-trigger" hidden>
           <ul class="cert-link-list">
-            <li><a href="https://drive.google.com/file/d/REPLACE_WITH_FILE_ID/view" target="_blank" rel="noopener noreferrer">Workshop / Training Certificate <span aria-hidden="true">↗</span></a></li>
-            <li><a href="https://drive.google.com/file/d/REPLACE_WITH_FILE_ID/view" target="_blank" rel="noopener noreferrer">Hackathon Participation Certificate <span aria-hidden="true">↗</span></a></li>
-            <li><a href="https://drive.google.com/file/d/REPLACE_WITH_FILE_ID/view" target="_blank" rel="noopener noreferrer">Online Course Completion Certificate <span aria-hidden="true">↗</span></a></li>
-            <li><a href="https://drive.google.com/file/d/REPLACE_WITH_FILE_ID/view" target="_blank" rel="noopener noreferrer">Add another certificate…</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Workshop / Training Certificate <span aria-hidden="true">↗</span></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Hackathon Participation Certificate <span aria-hidden="true">↗</span></a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Online Course Completion Certificate <span aria-hidden="true">↗</span></a></li>
           </ul>
         </div>
       </div>
@@ -191,7 +187,6 @@
       <div class="skills-groups" id="skills-groups">
         <div class="placeholder-card">
           <p>Your skills will appear here.</p>
-          <span>Add category groups and tags — see README 1, Section 4.</span>
         </div>
       </div>
     </div>
@@ -211,13 +206,7 @@
             <h3>Cloud Resume Challenge — AWS <span class="project-card-note">(This website)</span></h3>
             <p>
               Took on the Cloud Resume Challenge by hand-building this portfolio as a static
-              HTML, CSS, and JavaScript site, then setting up two independent free-tier
-              deployment paths for the same codebase: Amazon S3 as the origin behind a
-              CloudFront distribution — using Origin Access Control to keep the bucket
-              private, ACM for HTTPS, and cache invalidations on every release — and a
-              GitHub-to-Netlify pipeline for continuous deployment on every push. Along the
-              way, worked through IAM bucket policies, CloudFront cache behavior, and DNS
-              configuration for a custom domain.
+              HTML, CSS, and JavaScript site, deployed seamlessly with secure HTTPS and CI/CD pipelines.
             </p>
             <ul class="project-tags">
               <li>Amazon S3</li>
@@ -246,13 +235,11 @@
       <p class="section-eyebrow">Certifications &amp; Badges</p>
       <h2 class="section-title">Certifications &amp; Awards</h2>
 
-      <!-- Credly Badges (Live Fetch) -->
       <h3 class="badge-category-title">Credly Badges</h3>
       <div class="credly-grid" id="credly-badges-grid">
         <div class="badge-loading-skeleton">Fetching live badges from Credly...</div>
       </div>
 
-      <!-- Oracle Cloud Infrastructure -->
       <h3 class="badge-category-title" style="margin-top: 48px;">Oracle Cloud Infrastructure</h3>
       <p class="section-lead">Tap a badge to verify credentials on CertView.</p>
 
@@ -275,7 +262,6 @@
       <div class="interests-grid" id="interests-grid">
         <div class="placeholder-card">
           <p>Your interests will appear here.</p>
-          <span>Add short cards — see README 1, Section 6.</span>
         </div>
       </div>
     </div>
@@ -288,7 +274,7 @@
     <div class="section-inner">
       <p class="section-eyebrow">Contact</p>
       <h2 class="section-title">Let's talk</h2>
-      <p class="section-lead">Open to opportunities in cloud engineering, data science, and applied AI. Verify your email to unlock the submit button!</p>
+      <p class="section-lead">Open to opportunities in cloud engineering, data science, and applied AI. Verify your email with an OTP to unlock the submit button!</p>
 
       <div class="contact-grid">
         <!-- Contact Info Details -->
@@ -328,7 +314,7 @@
               <span id="otp-status" class="form-msg"></span>
             </div>
 
-            <!-- OTP Input Row (Hidden until Send OTP is clicked) -->
+            <!-- OTP Input Row -->
             <div class="form-group" id="otp-group" style="display: none;">
               <label for="otp-input">Enter OTP Code Received in Email</label>
               <div class="email-row">
@@ -343,11 +329,8 @@
               <textarea name="message" id="message" rows="4" required placeholder="Hi Preet, I'd like to chat about..."></textarea>
             </div>
 
-            <!-- Optional spam protection honeypot -->
+            <!-- Built-in Web3Forms Honeypot Spam Protection -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            
-            <!-- Updated hCaptcha element with your new sitekey -->
-            <div class="h-captcha" data-sitekey="9bb68484-53a2-4eba-ba7a-674c3e2a5052" style="margin-bottom: 16px;"></div>
 
             <!-- Submit Button (Disabled until OTP verified) -->
             <button type="submit" id="submit-btn" class="btn-submit" disabled style="opacity: 0.6; cursor: not-allowed;">Submit Message</button>

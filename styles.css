@@ -452,7 +452,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 /* ==========================================================================
    CONTACT
    ========================================================================== */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 14px; }
+.contact-grid > * { min-width: 0; }
 .contact-item { display: flex; flex-direction: column; gap: 5px; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px 20px; transition: border-color 0.2s var(--ease), transform 0.2s var(--ease); background: var(--surface); text-decoration: none; }
 .contact-item:hover { border-color: var(--accent-line); transform: translateY(-2px); }
 .contact-item-label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-faint); letter-spacing: 0.05em; font-weight: 700; }
@@ -583,9 +584,13 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .email-row {
   display: flex;
   gap: 10px;
+  width: 100%;
+  min-width: 0;
 }
 .email-row input {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
 }
 .btn-sub {
   background: var(--surface-2);
@@ -602,6 +607,43 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: var(--accent-soft);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+
+.form-msg {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-faint);
+}
+.form-msg.success { color: #15803d; }
+.form-msg.error { color: #dc2626; }
+
+@media (max-width: 520px) {
+  .contact-form-container {
+    padding: 18px 14px;
+  }
+
+  .email-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-sub {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
 }
 
 /* Success Popup Modal */

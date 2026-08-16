@@ -307,11 +307,10 @@
             <!-- OTP Input Row -->
             <div class="form-group" id="otp-group" style="display: none;">
               <label for="otp-input">Enter OTP Code Received in Email</label>
-              <div class="email-row">
-                <input type="text" id="otp-input" maxlength="4" placeholder="1234">
-                <button type="button" id="verify-otp-btn" class="btn-sub">Verify</button>
+              <div class="email-row otp-row">
+                <input type="text" id="otp-input" maxlength="4" inputmode="numeric" autocomplete="one-time-code" placeholder="1234" aria-describedby="verify-status">
               </div>
-              <span id="verify-status" class="form-msg"></span>
+              <span id="verify-status" class="form-msg">Enter the 4-digit code to verify automatically.</span>
             </div>
             
             <div class="form-group">

@@ -684,3 +684,30 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
+/* ==========================================================================
+   VISITOR COUNTER — fixed to the bottom-right corner
+   ========================================================================== */
+.visitor-counter {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.visitor-counter .counter-number {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: 0 4px 14px rgba(28, 34, 48, 0.12);
+  font-weight: 500;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .visitor-counter { right: 10px; bottom: 10px; font-size: 0.8rem; }
+}
